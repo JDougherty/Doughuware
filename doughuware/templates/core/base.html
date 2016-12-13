@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{% static 'packages/bootstrap-3.3.5-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'packages/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/core.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+  {% block nav %}
+  {% include 'core/nav.html' %}
+  {% endblock %}
+
+  {% block body %}
+  {% endblock %}
+
+  <hr>
+  <footer>
+    Doughuware is Copyright&copy 2015, <a href="http://jwdougherty.com">Joseph W. Dougherty</a>
+  </footer>
+  <script type="text/javascript" src="{% static 'packages/bootstrap-3.3.5-dist/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

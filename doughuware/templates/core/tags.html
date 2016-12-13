@@ -1,0 +1,25 @@
+<script type="text/javascript">
+  var tagTree = {{ tags|safe }};
+
+  function parseNodes(nodes) {
+      var ul = $('<ul>');
+      for(var i=0; i<nodes.length; i++) {
+          ul.append(parseNode(nodes[i]));
+      }
+      return ul;
+  }
+
+  function parseNode(node) {
+      var li = $('<li>');
+      $(li).text(node.name);
+      if(node.children.length) li.append(parseNodes(node.children));
+      return li;
+  }
+
+  $(document).ready(function(){
+    $('#tagTree').append("<ul class='tree'>" + parseNodes(tagTree).html() + "</ul>");
+  });
+</script>
+<div class="well" style="font:12pt verdana;" id="tagTree">
+  <h4>Tags</h4>
+</div>

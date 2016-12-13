@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load core_tags %}
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+        {% render_tags %}
+    </div>
+    <div class="col-md-9">
+     <ul>
+     {% for document in object_list %}
+       <li>{{ d }}</li>
+     {% endfor %}
+     </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

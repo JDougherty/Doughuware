@@ -10,7 +10,7 @@ class Tag(models.Model):
 
     def serializable_object(self):
         obj = {'name': self.name, 'children': []}
-        for child in self.children():
+        for child in self.children.all():
             obj['children'].append(child.serializable_object())
         return obj
 
